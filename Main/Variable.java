@@ -35,4 +35,8 @@ public class Variable{
         power++;
         coefficient/=power;
     }
+    public String toString(){
+
+        return coefficient+name+"^"+power;
+    }
 }

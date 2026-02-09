@@ -1,7 +1,8 @@
 import java.util.ArrayList;
-public class MultiVariable implements Variable{
-    protected String[] names;
-    public MultiVariable(){
-
+public class MultiVariable extends Variable {
+    protected Variable[] variables;
+    public MultiVariable(Variable[] variables){
+        this.variables = variables;
     }
+
 }
