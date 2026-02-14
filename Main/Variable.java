@@ -1,7 +1,7 @@
 public class Variable{
-    private String name;
-    private double coefficient;
-    private double power;
+    protected String name;
+    protected double coefficient;
+    protected double power;
 
     public Variable(String name, double power, double coefficient){
         this.name = name;
@@ -26,6 +26,21 @@ public class Variable{
     }
     public void raiseTo(double power){
         this.power*=power;
+    }
+
+    public MultiVariable multiplyVariable(Variable var){
+        double coefficient=var.coefficient*this.coefficient;
+        double power;
+        String name;
+        if(var.name.equals(this.name)){
+            name = this.name;
+            power = this.power + var.power;
+            Variable varToReturn = new Variable(name,power,coefficient);
+            return new MultiVariable(varToReturn);
+        }
+        else{
+            return new MultiVariable(var,this);
+        }
     }
     public void derive(){
         coefficient*=power;

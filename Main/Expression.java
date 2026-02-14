@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class MultiVariable{
+public class Expression{
     protected ArrayList<Variable> variables = new ArrayList<>();
 
-    public MultiVariable(Variable...var){
+    public Expression(Variable...var){
         for(Variable variable:var){
             variables.add(variable);
         }
@@ -28,16 +27,6 @@ public class MultiVariable{
         }
         return toReturn;
     }
-    public void derive(){
-        ArrayList<Variable> tempVar = variables;
-        ArrayList<String> toAddTo = new ArrayList<>();
-        MultiVariable toAdd = new MultiVariable();
-        int uses = 0;
-        for(Variable var: tempVar){
-            var.derive();
-            toAdd.addVariable(var);
-             uses++;
-        }
-    }
+
 
 }

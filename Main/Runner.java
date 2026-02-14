@@ -4,12 +4,11 @@ public class Runner {
 
     public static void main(String[] args) {
         Variable var = new Variable();
-        var.multiply(10);
+        Variable var1 = new Variable("y",10,-5);
+        var.multiply(-10);
         var.raiseTo(5);
         System.out.println(var.toString());
-        Variable[] vars = {var};
-        System.out.println(Arrays.toString(vars));
-        MultiVariable var2 = new MultiVariable(vars);
+        MultiVariable var2 = new MultiVariable(var,var1);
         System.out.println(var2.toString());
 
     }
