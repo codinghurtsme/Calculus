@@ -7,9 +7,9 @@ public class Runner {
         Variable var1 = new Variable("y",10,-5);
         var.multiply(-10);
         var.raiseTo(5);
+        Variable var3 = new Variable("x",2,1);
         System.out.println(var.toString());
-        MultiVariable var2 = new MultiVariable(var,var1);
+        MultiVariable var2 = new MultiVariable(var,var1,var3);
         System.out.println(var2.toString());
-
     }
 }
